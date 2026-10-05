@@ -1,39 +1,20 @@
 ---
-title: About
+title: このサイトについて
 layout: about
 permalink: /about.html
-# include CollectionBuilder info at bottom
 credits: true
-# featured-image value can be one objectid for a photo object in this collection, a relative path to an image in this project, or a full url to any image. If left blank, no featured image will appear at top of About page.
-about-featured-image: demo_031
-# set background-position for featured image, "center", "top", "bottom"
-position: bottom
-# major heading to display over featured image
-heading: About the Collection
-# paragraph text below heading in featured image
-sub-heading: 
-# additional padding added to the feature to increase size. Give value in em or px, e.g. "5em".
+about-featured-image: agri_187cc82d
+position: center
+heading: このサイトについて
 padding: 6em
-# Edit the markdown on in this file to describe your collection
-# Look in _includes/feature for options to easily add features to the page
 ---
 
-## About CollectionBuilder CSV
+## 収録資料
 
-This demo collection features items from the University of Idaho Library's [Digital Collections](https://www.lib.uidaho.edu/digital/), and is build using [CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv).
+[東京大学デジタルアーカイブポータル](https://da.dl.itc.u-tokyo.ac.jp/portal/)で公開されている、東京大学農学生命科学図書館の貴重書から 8 点を選びました。
+画像と書誌は、デジタルアーカイブが IIIF で公開しているものを、そのまま読み込んでいます。
 
-CollectionBuilder-CSV is a "Stand Alone" template for creating digital collection and exhibit websites using Jekyll, given:
+## 作り方
 
-- a CSV of collection metadata
-- a folder of images, PDFs, audio, or video files
-
-Driven by your collection metadata, the template generates engaging visualizations to browse and explore your objects.
-The resulting static site can be hosted on any basic web server.
-
-[CollectionBuilder](https://github.com/CollectionBuilder/) is an set of open source tools for creating digital collection and exhibit websites that are driven by metadata and powered by modern static web technology.
-See [CB Docs](https://collectionbuilder.github.io/cb-docs/) for detailed information.
-
-{% include feature/image.html objectid="demo_001" width="75" %} 
-
-<!-- IMPORTANT!!! DELETE this comment and the include below when you are finished editing this page for your collection. The include below introduces about page features. They will show up on your collection's about page until you delete it.  -->
-{% include cb/about_the_about.md %} 
+[CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv) を元に、目録の CSV と設定ファイルだけで作っています。
+日本語の画面・日本語検索・IIIF ビューアは、[cb-ja-demo](https://github.com/nakamura196/cb-ja-demo) から写しました。
