@@ -78,3 +78,10 @@ exclude: [docs/, Rakefile, rakelib/, README.md, LICENSE, CITATION.cff, CODE_OF_C
 # compress CSS output
 sass:
   style: compressed
+
+# 日本語検索（cjk_index）
+cjk_index:
+  variants: [ja] # 旧字と新字を同じ字として扱う
+  indexes:
+    - name: search
+      preset: collectionbuilder
