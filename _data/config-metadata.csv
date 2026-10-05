@@ -1,15 +1,11 @@
 field,display_name,browse_link,external_link,dc_map,schema_map
-title,Title,,,DCTERMS.title,headline
-creator,Creator,,,DCTERMS.creator,creator
-date,Date Created,,,DCTERMS.date,dateCreated
-description,Description,,,DCTERMS.description,description
-subject,Subjects,true,,DCTERMS.subject,keywords
-location,Location,,,DCTERMS.coverage,contentLocation
-latitude,Latitude,,,,
-longitude,Longitude,,,,
-source,Source,,,,
-identifier,Source Identifier,,,,
-type,Type,,,DCTERMS.type,
-format,Format,,,,encodingFormat
-language,Language,,,DCTERMS.language,
+title,資料名,,,DCTERMS.title,headline
+creator,作成者,true,,DCTERMS.creator,creator
+date,年（西暦）,,,DCTERMS.date,dateCreated
+date_original,年代,,,,
+description,解説,,,DCTERMS.description,description
+subject,主題,true,,DCTERMS.subject,keywords
+type,資料種別,true,,DCTERMS.type,
+manifest,IIIF マニフェスト,,true,,
+rights,ライセンス,,,,
 rightsstatement,,,,DCTERMS.rights,license
