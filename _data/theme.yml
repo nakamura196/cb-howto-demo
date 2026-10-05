@@ -97,10 +97,10 @@ search-child-objects: true # true / false - if true, child objects will appear o
 #
 # navbar text color scheme
 # Choose from "light" for use with light background colors, or "dark" for dark background colors
-navbar-color: dark
+navbar-color: light
 # navbar background color, https://getbootstrap.com/docs/5.3/utilities/background/
 # Choose from bg-primary, bg-secondary, bg-success, bg-danger, bg-warning, bg-info, bg-light, bg-dark, bg-white
-navbar-background: bg-black
+navbar-background: bg-white
 
 # BOOTSWATCH THEMES [optional!]
 # You can replace the standard Bootstrap theme with a Bootswatch (https://github.com/thomaspark/bootswatch) option
@@ -108,11 +108,11 @@ navbar-background: bg-black
 bootswatch: # leave blank or comment out for plain bootstrap
 
 # THEME FONTS [optional!]
-base-font-size: 1.2em
+base-font-size: 1.05em
 text-color: "#191919"
 link-color: "#0d6efd"
 base-font-family: # comment out for bootstrap defaults. e.g. Roboto
-font-cdn: # add font stylesheet, e.g. <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+font-cdn: '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">'
 
 # THEME ICONS [optional!]
 # default icons can be overridden or new icons can be added using "icons" object

@@ -3,6 +3,7 @@ title,資料名,,,DCTERMS.title,headline
 creator,作成者,true,,DCTERMS.creator,creator
 date,年（西暦）,,,DCTERMS.date,dateCreated
 date_original,年代,,,,
+era,時代,true,,,
 description,解説,,,DCTERMS.description,description
 subject,主題,true,,DCTERMS.subject,keywords
 type,資料種別,true,,DCTERMS.type,

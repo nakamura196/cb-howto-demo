@@ -4,3 +4,4 @@ date,年（西暦）,,true,年（西暦）
 creator,作成者,,,作成者
 subject,,true,,,主題
 type,,true,,,資料種別
+era,,true,,,時代
