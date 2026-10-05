@@ -3,6 +3,7 @@
 layout: page
 custom-foot: js/table-js.html 
 ---
+{%- assign t = site.data.locale[site.lang] -%}
 {% assign fields = site.data.config-table | map: 'display_name' %}
 {% include data-download-modal.html %}
 
@@ -15,7 +16,7 @@ custom-foot: js/table-js.html
                 {% for f in fields %}
                 <th scope="col">{{ f }}</th>
                 {% endfor %}
-                <th>Link</th>
+                <th>{{ t.link | default: "Link" }}</th>
             </tr>
         </thead>
     </table>

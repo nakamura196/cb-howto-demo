@@ -1,3 +1,4 @@
+{%- assign t = site.data.locale[site.lang] -%}
 {%- assign fields = site.data.config-search -%}
 {%- assign index_fields = fields | where: 'index','true' -%}
 <script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/lunr.min.js"></script>
@@ -41,7 +42,7 @@ function lunr_search () {
         searchitem += '</p></li>';
         newresults += searchitem;
     }
-    var resultslist = `<h3 class="border-bottom mb-3 h5"><small>${results.length} Results found</small></h3>
+    var resultslist = `<h3 class="border-bottom mb-3 h5"><small>${ {{ t.results_found | default: "%n Results found" | jsonify }}.replace("%n", results.length) }</small></h3>
                         <ul class="list-unstyled">${newresults}</ul>`;
     resultsdiv.innerHTML = resultslist;
 }

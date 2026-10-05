@@ -1,3 +1,4 @@
+{%- assign t = site.data.locale[site.lang] -%}
 {% if site.data.theme.browse-child-objects == true %}
 {%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
 {% else %}
@@ -95,10 +96,10 @@ function makeCard(obj) {
     // Media type badge
     if(obj.display_template) {
         const mediaIcon = getIcon(obj.display_template, obj.format, "hidden");
-        card += `<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#display_template:${encodeURIComponent(obj.display_template)}">${obj.display_template.toUpperCase().replace("_"," ")} ${mediaIcon}</a></small></p>`;
+        card += `<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#display_template:${encodeURIComponent(obj.display_template)}">${((({{ t.template_labels | jsonify }}) || {})[obj.display_template] || obj.display_template).toUpperCase().replace("_"," ")} ${mediaIcon}</a></small></p>`;
     }
     
-    card += `<hr><a href="${itemHref}" class="btn btn-sm btn-light" title="link to ${obj.title}">View Full Record</a></div></div></div>`;
+    card += `<hr><a href="${itemHref}" class="btn btn-sm btn-light" title="{{ t.link_to | default: "link to" }} ${obj.title}">{{ t.view_full_record | default: "View Full Record" }}</a></div></div></div>`;
     return card;
 }
 
@@ -367,7 +368,7 @@ function updateDisplay(filteredItems, query = "", field = "", startDate = "", en
     browseItemsDiv.appendChild(fragment);
     
     // Update count
-    document.querySelector("#numberOf").innerHTML = `${filteredItems.length} of {{ items | size }} items`;
+    document.querySelector("#numberOf").innerHTML = {{ t.n_of_total | default: "%n of %total items" | jsonify }}.replace("%n", filteredItems.length).replace("%total", {{ items | size }});
     
     // Focus active input (only if needed)
     if (query || startDate || endDate) {
@@ -692,8 +693,8 @@ function displayActiveFilters(searchCriteria) {
         button.type = 'button';
         
         // Get field display name
-        let fieldName = criteria.field === 'all' ? 'All Fields' : 
-        'display_template' === criteria.field ? 'Content Type' : 
+        let fieldName = criteria.field === 'all' ? {{ t.all_fields | default: "All Fields" | jsonify }} : 
+        'display_template' === criteria.field ? {{ t.content_type | default: "Content Type" | jsonify }} : 
             {% for f in fields %}'{{f.field}}' === criteria.field ? '{% if f.display_name %}{{f.display_name}}{% else %}{{f.field | capitalize }}{% endif %}' : {% endfor %}
             criteria.field.charAt(0).toUpperCase() + criteria.field.slice(1).replace(/_/g, ' ');
         
@@ -701,11 +702,11 @@ function displayActiveFilters(searchCriteria) {
         let displayValue = criteria.value;
         if (isDateField(criteria.field) && (criteria.startDate || criteria.endDate)) {
             if (criteria.startDate && criteria.endDate) {
-                displayValue = `${criteria.startDate} to ${criteria.endDate}`;
+                displayValue = {{ t.date_range | default: "%s to %e" | jsonify }}.replace("%s", criteria.startDate).replace("%e", criteria.endDate);
             } else if (criteria.startDate) {
-                displayValue = `from ${criteria.startDate}`;
+                displayValue = {{ t.date_from | default: "from %s" | jsonify }}.replace("%s", criteria.startDate);
             } else if (criteria.endDate) {
-                displayValue = `until ${criteria.endDate}`;
+                displayValue = {{ t.date_until | default: "until %e" | jsonify }}.replace("%e", criteria.endDate);
             }
         }
         
@@ -737,7 +738,7 @@ function displayActiveFilters(searchCriteria) {
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
         </svg>
-        Add Field
+        {{ t.add_field | default: "Add Field" }}
     `;
     addButton.addEventListener('click', () => {
         new bootstrap.Modal(document.getElementById('advancedSearchModal')).show();

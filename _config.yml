@@ -18,6 +18,7 @@ source-code: https://github.com/CollectionBuilder/collectionbuilder-csv
 # SITE SETTINGS
 #
 # title of site appears in banner
+lang: ja
 title: 農学生命科学図書館 貴重書コレクション
 # tagline, a short phrase that will appear throughout the site in the top banner
 tagline: 東京大学デジタルアーカイブの IIIF 資料から

@@ -1,5 +1,5 @@
 ---
-title: Subjects
+title: 主題
 layout: cloud
 permalink: /subjects.html
 # Default subject page is configured in "_data/theme.yml"
@@ -8,7 +8,6 @@ permalink: /subjects.html
 cloud-fields: site.data.theme.subjects-fields
 ---
 
-## Browse Subjects
+## 主題から見る
 
-Use this word cloud visualization to browse terms and subjects.
-Word size is determined by frequency and all words link to a corresponding collection search.
+文字の大きさは資料の数を表します。語を押すと、その主題の資料の一覧に移ります。

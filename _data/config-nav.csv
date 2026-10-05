@@ -1,7 +1,7 @@
 display_name,stub,dropdown_parent
-Home,/,
-Browse,/browse.html,
-Subjects,/subjects.html,
-Timeline,/timeline.html,
-Data,/data.html,
-About,/about.html,
+ホーム,/,
+一覧,/browse.html,
+主題,/subjects.html,
+年表,/timeline.html,
+データ,/data.html,
+このサイトについて,/about.html,
